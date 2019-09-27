@@ -10,7 +10,7 @@ bot = commands.Bot(command_prefix = '!')
 token = 'Insira token obtida acima aqui'
 
 procurando = False
-qtRuim = 0
+qtRuim = 1
 limiar = 200
 
 @bot.event
