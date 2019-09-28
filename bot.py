@@ -30,7 +30,7 @@ async def on_message(message):
     global procurando
     channels = ['liga-das-waifu','geral','mudamaidadm']
     comandosDisable = ['$mmk','$mmr','$im','$imar','$top','$tu','$mu','$mm','$k','$wl','$wish','$wr']
-    comandosEnable = ['$w','$wg','$h','$hg','$wa','$ha']
+    comandosEnable = ['$w','$wg','$h','$hg','$wa','$ha','$mg','$m','$mb','$wb']
 
     if str(message.channel) in channels:
         if str(message.author.id != "539387420953542675"):
@@ -64,7 +64,22 @@ async def cat(ctx):
 #Utilidade
 @bot.command(aliases=['comandos'])
 async def commands(ctx):
-    await ctx.send(f"!alust, !yuzao, !rolls, !barata, !cat, !whitecat, !animeban, !mousepoints, !wcsleep, !commands")
+    await ctx.send(f"DM enviada!")
+
+    helpembed = discord.Embed(title = 'Comandos WhiteCat BOT',color=discord.Color.purple())
+    #helpembed.set_author(name="Comandos:")
+    helpembed.add_field(name="!comandos (!commands)", value="Desativa o tracking do bot",inline=False)
+    helpembed.add_field(name="!mousepoints (!points, !mousepontos)", value="Diz a quantidade de mousepoints acumulados na stream",inline=False)
+    helpembed.add_field(name="!rolls", value="Diz a quantidade de rolls ruins seguidos no #liga-das-waifu",inline=False)
+    helpembed.add_field(name="!cat (!gato)", value='Envia um gif de gato aleatório',inline=False)
+    helpembed.add_field(name="!barata", value="Envia a lendária gif das baratas",inline=False)
+    helpembed.add_field(name="!alust, !yuzao, !animeban", value="Zoeira",inline=False)
+    helpembed.add_field(name="!whitecat", value="Ativa o tracking do bot",inline=False)
+    helpembed.add_field(name="!wcsleep", value="Desativa o tracking do bot",inline=False)
+    helpembed.set_footer(text = 'Qualquer problema com o bot, mande uma mensagem pro alust, ele que roda essa bagaça.')
+    helpembed.set_image(url="https://media.discordapp.net/attachments/539730926800994314/623568231625392128/image0.gif")
+
+    await ctx.author.send(embed=helpembed)
 
 @bot.command()
 async def rolls(ctx):
